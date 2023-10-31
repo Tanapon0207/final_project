@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="container">
+    <link rel="stylesheet" href="graph.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <title>Graph Association</title>
+
+    <nav class="navbar navbar-light bg-light" style="height: 100px;">
+        <div class="container" style="margin-top: -20px;">
+
+            <a class="navbar-brand" href="https://www.wu.ac.th/th">
+                <img src="https://library.wu.ac.th/content/wp-content/uploads/sites/8/2022/02/02-%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87.png"
+                    alt="" width="100" height="90" style="margin-top: 15px; font: size 10px;">
+
+
+            </a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html" style="color: black;">หน้าหลัก</a>
+                </li>
+
+
+                <li class="nav-item">
+
+                    <button onclick="logout()" style="width:auto;" class="btn btn-outline-danger"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                            <path fill-rule="evenodd"
+                                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                        </svg> ออกจากระบบ</button>
+                </li>
+            </ul>
+
+
+
+            <div class="grid-container" style="margin-top:20px; width: 9000px;  margin-left: -110px;">
+
+                <!-- Header -->
+                <header class="header">
+                    <div class="menu-icon" onclick="openSidebar()">
+                        <span class="material-icons-outlined">menu</span>
+                    </div>
+                    <!--
+                    <div class="header-right">
+
+                        <span class="material-icons-outlined">account_circle</span>
+                    </div>
+                -->
+
+                </header>
+
+                <!-- End Header -->
+
+                <!-- Sidebar -->
+                <aside id="sidebar">
+                    <div class="sidebar-title">
+                        <div class="sidebar-brand">
+                            <span class="material-icons-outlined" style="padding-left: 40px;"> inventory</span> เมนู
+                            :
+                        </div>
+                        <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                    </div>
+
+                    <ul class="sidebar-list">
+                        <li class="sidebar-list-item">
+                            <a href="graph.html">
+                                <span class="material-icons-outlined">dashboard</span> ผลการวิเคราะห์สถิติ
+                            </a>
+                        </li>
+                        <li class="sidebar-list-item" style="margin-left: -40px;">
+                            <a href="admin.html">
+                                <span class="material-icons-outlined">inventory_2</span> ข้อมูลผู้ใช้งาน
+                            </a>
+                        </li>
+
+                        <li class="sidebar-list-item">
+                            <a href="class.html">
+                                <span class="material-icons-outlined">fact_check</span>
+                                ผลการวิเคราะห์การจัดกลุ่มข้อมูล
+                                (Clustering)
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-list-item">
+                            <a href="asso.html">
+                                <span class="material-icons-outlined">poll</span> ผลการวิเคราะห์การหาความสัมพันธ์ (Association Rule)
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </aside>
+                <!-- End Sidebar -->
+
+                <!-- Main -->
+                <main class="main-container">
+                    <div class="main-title">
+                        <p class="font-weight-bold">ผลการวิเคราะห์การทำ Association Rule อุปกรณ์ฮาร์ดเเวร์ข้อมูลการเเจ้งซ่อมตั้งเเต่ปี 2560-2564 จำนวน 940 ระเบียน</p>
+                    </div>
+
+                    <div class="main-cards" style="align-items: center;">
+
+                        <div class="card">
+                            <div class="card-inner">
+                                <p class="-" style="color: black;">ข้อมูลที่ทำการคัดเเยกมาเเล้วทั้งหมด</p>
+
+                            </div>
+                            <span class=" font-weight-bold">940 ระเบียน</span>
+                        </div>
+                        <!--
+                        <div class="card">
+                            <div class="card-inner">
+                                <p class="text-primary">PURCHASE ORDERS</p>
+                                <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+                            </div>
+                            <span class="text-primary font-weight-bold">83</span>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-inner">
+                                <p class="text-primary">SALES ORDERS</p>
+                                <span class="material-icons-outlined text-green">shopping_cart</span>
+                            </div>
+                            <span class="text-primary font-weight-bold">79</span>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-inner">
+                                <p class="text-primary">INVENTORY ALERTS</p>
+                                <span class="material-icons-outlined text-red">notification_important</span>
+                            </div>
+                            <span class="text-primary font-weight-bold">56</span>
+                        </div>
+                        -->
+
+
+
+
+
+                    </div>
+                    <div>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                            google.charts.load("current", { packages: ["corechart"] });
+                            google.charts.setOnLoadCallback(drawChart);
+                            function drawChart() {
+                                var data = google.visualization.arrayToDataTable([
+                                    ["เปอร์เซ็นต์ความเชื่อมั่น", "Confidence", { role: "style" },],
+                                    ["กฎที่ 1 ค่าความเชื่อมั่น 83%", 83.00, "#b87333"],
+                                    ["กฎที่ 2 ค่าความเชื่อมั่น 81%", 81.00, "silver"],
+                                    ["กฎที่ 3 ค่าความเชื่อมั่น 80%", 80.00, "gold"],
+                                    ["กฎที่ 4 ค่าความเชื่อมั่น 80%", 80.00, "color: #F5DEB3"]
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1,
+                                    {
+                                        calc: "stringify",
+                                        sourceColumn: 1,
+                                        type: "string",
+                                        role: "annotation"
+                                    },
+                                    2]);
+
+                                var options = {
+                                    title: "ผลการวิเคราะห์ความสัมพันธ์การเเจ่งซ่อมของอุปกรณ์ ตั้งเเต่ปี 2560-2564 ได้กฎความสัมพันธ์ดังนี้",
+                                    width: 1100,
+                                    height: 510,
+                                    bar: { groupWidth: "80%" },
+                                    legend: { position: "none" },
+                                };
+                                var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+                                chart.draw(view, options);
+                            }
+                        </script>
+                        <div id="barchart_values" style="width: 900x; height: 520px; border: 2px solid #ccc"></div>
+
+                        <div class="label" style="text-align: left;">
+                            <br>
+                            <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-square-fill" viewBox="0 0 16 16" style="color: #b87333;">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                                </svg> <u>กฎข้อที่ 1</u> ปัญหาที่แจ้งซ่อมด้วยอาการเครื่องคอมพิวเตอร์เปิดไม่ติด จำนวน
+                                83%
+                                เป็นปัญหาที่เกิดจากฮาร์ดแวร์ </p>
+
+                            <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-square-fill" viewBox="0 0 16 16" style="color: silver;">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                                </svg> <u>กฎข้อที่ 2</u> คอมพิวเตอร์ที่อายุมากกว่า 5 ปี ส่วนใหญ่ จำนวน 81%
+                                จะเป็นการแจ้งปัญหาจากอาการเสียของจอภาพ </p>
+
+                            <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-square-fill" viewBox="0 0 16 16" style="color: gold;">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                                </svg> <u>กฎข้อที่ 3</u> คอมพิวเตอร์ที่มีอายุมากกว่า 5 ปีขึ้นไป จำนวน 80%
+                                จะเกิดปัญหาที่ฮาร์ดแวร์ </p>
+
+                            <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-square-fill" viewBox="0 0 16 16" style="color: #F5DEB3;">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                                </svg>
+                                <u>กฎข้อที่ 4</u>
+                                อาการเสียของจอภาพของเครื่องคอมพิวเตอร์ ที่เกี่ยวกับจอภาพ
+                                จำนวน
+                                80% เป็นปัญหาที่เกิดจากฮาร์ดแวร์
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                </main>
+                <!-- End Main -->
+
+            </div>
+
+
+            <script>
+                function logout() {
+                    localStorage.clear();
+                    location.href = './index.html'
+                }
+            </script>
+
+            <!-- Scripts -->
+            <!-- ApexCharts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+            <!-- Custom JS -->
+            <script src="js/scripts.graph.js"></script>
+
+
+
+
+
+            </body>
+
+</html>
